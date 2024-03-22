@@ -1,8 +1,7 @@
-package pl.edu.pjatk.myapplication;
+package pl.edu.pjatk.PAMO_s23046;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,16 +19,13 @@ public class MainActivity extends AppCompatActivity {
         Button buttonSubmit = findViewById(R.id.submit);
         TextView textViewResult = findViewById(R.id.result);
 
-        buttonSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                float height = Float.parseFloat(editTextHeight.getText().toString()) / 100;
-                float weight = Float.parseFloat(editTextWeight.getText().toString());
-                float result = weight / (height * height);
-                BmiLabelAndColor bmiLabelAndColor = BmiLabelAndColor.getBmiLabelAndColor(result);
-                textViewResult.setTextColor(bmiLabelAndColor.color);
-                textViewResult.setText(bmiLabelAndColor.label);
-            }
+        buttonSubmit.setOnClickListener(v -> {
+            float height = Float.parseFloat(editTextHeight.getText().toString()) / 100;
+            float weight = Float.parseFloat(editTextWeight.getText().toString());
+            float result = weight / (height * height);
+            BmiLabelAndColor bmiLabelAndColor = BmiLabelAndColor.getBmiLabelAndColor(result);
+            textViewResult.setTextColor(bmiLabelAndColor.color);
+            textViewResult.setText(bmiLabelAndColor.label);
         });
     }
 

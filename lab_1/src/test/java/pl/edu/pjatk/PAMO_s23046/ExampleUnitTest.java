@@ -1,4 +1,4 @@
-package pl.edu.pjatk.myapplication;
+package pl.edu.pjatk.PAMO_s23046;
 
 import org.junit.Test;
 

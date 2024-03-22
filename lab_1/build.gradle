@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'pl.edu.pjatk.myapplication'
+    namespace 'pl.edu.pjatk.PAMO_s23046'
     compileSdk 34
 
     defaultConfig {
-        applicationId "pl.edu.pjatk.myapplication"
+        applicationId "pl.edu.pjatk.PAMO_s23046"
         minSdk 24
         targetSdk 34
         versionCode 1
