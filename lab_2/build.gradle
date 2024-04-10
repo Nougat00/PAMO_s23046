@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'pl.edu.pjatk.PAMO_s23046'
+    namespace 'pl.edu.pjatk.lab_2'
     compileSdk 34
 
     defaultConfig {
-        applicationId "pl.edu.pjatk.PAMO_s23046"
+        applicationId "pl.edu.pjatk.lab_2"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -26,9 +26,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildFeatures {
-        viewBinding true
-    }
 }
 
 dependencies {
@@ -37,8 +34,6 @@ dependencies {
     implementation libs.material
     implementation libs.activity
     implementation libs.constraintlayout
-    implementation libs.lifecycle.livedata.ktx
-    implementation libs.lifecycle.viewmodel.ktx
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
