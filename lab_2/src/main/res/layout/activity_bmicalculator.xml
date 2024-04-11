@@ -2,13 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context="pl.edu.pjatk.lab_2.BMICalculator">
+    tools:context=".BMICalculator">
 
     <TextView
         android:id="@+id/textView"
@@ -39,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:hint="Enter weight in KG"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:layout_editor_absoluteX="21dp" />
 
@@ -49,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="116dp"
         android:hint="Enter height in CM"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,6 +76,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/home" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

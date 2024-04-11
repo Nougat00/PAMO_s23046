@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">lab_2</string>
+    <string name="app_name">FitKing</string>
+    <string name="recipe1_details">Ingredients:\n- Chicken breast\n- Arugula\n- Cherry tomatoes\n- Cucumber\n- Red bell pepper\n- Avocado\n- Herb yogurt dressing\n\nPreparation:\n1. Slice the chicken breast and grill on a grill.\n2. In a bowl, mix diced red pepper, cucumber, tomatoes, and arugula.\n3. Arrange grilled chicken slices on top.\n4. Drizzle the salad with herb yogurt dressing.\n5. Serve with a slice of avocado on top.</string>
+    <string name="recipe2_details">Ingredients:\n- Oat flakes\n- Plant-based milk\n- Banana\n- Berries\n- Walnuts\n\nPreparation:\n1. Bring plant-based milk to a boil in a saucepan.\n2. Add oat flakes and cook over low heat for 5-7 minutes, stirring occasionally.\n3. Remove from heat and let it cool for a moment.\n4. Slice the banana and walnuts.\n5. Serve oatmeal with sliced banana, berries, and walnuts on top.</string>
 </resources>

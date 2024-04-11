@@ -9,19 +9,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PAMO_s23046">
         <activity
+            android:name=".BMICalculator"
+            android:exported="false" />
+        <activity
+            android:name=".RecipesActivity"
+            android:exported="false" />
+        <activity
             android:name=".CaloriesToEat"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".BMICalculator"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,15 +1,14 @@
 package pl.edu.pjatk.lab_2;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class BMICalculator extends AppCompatActivity {
 
@@ -23,12 +22,19 @@ public class BMICalculator extends AppCompatActivity {
         TextView textViewResult = findViewById(R.id.result);
 
         buttonSubmit.setOnClickListener(v -> {
-            float height = Float.parseFloat(editTextHeight.getText().toString()) / 100;
-            float weight = Float.parseFloat(editTextWeight.getText().toString());
-            float result = weight / (height * height);
-            BmiLabelAndColor bmiLabelAndColor = BmiLabelAndColor.getBmiLabelAndColor(result);
-            textViewResult.setTextColor(bmiLabelAndColor.color);
-            textViewResult.setText(bmiLabelAndColor.label);
+            if (!StringUtils.isAnyEmpty(editTextWeight.getText(), editTextHeight.getText())) {
+                float height = Float.parseFloat(editTextHeight.getText().toString()) / 100;
+                float weight = Float.parseFloat(editTextWeight.getText().toString());
+                float result = weight / (height * height);
+                BmiLabelAndColor bmiLabelAndColor = BmiLabelAndColor.getBmiLabelAndColor(result);
+                textViewResult.setTextColor(bmiLabelAndColor.color);
+                textViewResult.setText(bmiLabelAndColor.label);
+                Utils.hideKeyboard(this, findViewById(android.R.id.content));
+            } else {
+                textViewResult.setTextColor(Color.RED);
+                textViewResult.setText("One of fields is empty");
+                Utils.hideKeyboard(this, findViewById(android.R.id.content));
+            }
         });
     }
 
@@ -53,9 +59,5 @@ public class BMICalculator extends AppCompatActivity {
             }
             return new BmiLabelAndColor(result + "\nExtremely obese", Color.RED);
         }
-    }
-
-    public void openHomeActivity(View view) {
-        startActivity(new Intent(this, MainActivity.class));
     }
 }

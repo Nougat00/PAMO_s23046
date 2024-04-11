@@ -21,4 +21,8 @@ public class MainActivity extends AppCompatActivity {
     public void openCaloriesToEat(View view) {
         startActivity(new Intent(this, CaloriesToEat.class));
     }
+
+    public void openRecipes(View view) {
+        startActivity(new Intent(this, RecipesActivity.class));
+    }
 }
