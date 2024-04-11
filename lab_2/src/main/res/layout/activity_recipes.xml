@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="8dp"
-                android:text="Fit sałatka z grillowanym kurczakiem"
+                android:text="Fit salad with grilled chicken"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -56,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="8dp"
-                android:text="Owsianka z owocami"
+                android:text="Oatmeal with fruits"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

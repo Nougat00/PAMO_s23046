@@ -1,7 +1,9 @@
 package pl.edu.pjatk.lab_2;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -59,5 +61,9 @@ public class BMICalculator extends AppCompatActivity {
             }
             return new BmiLabelAndColor(result + "\nExtremely obese", Color.RED);
         }
+    }
+
+    public void openHomeActivity(View view) {
+        startActivity(new Intent(this, MainActivity.class));
     }
 }
