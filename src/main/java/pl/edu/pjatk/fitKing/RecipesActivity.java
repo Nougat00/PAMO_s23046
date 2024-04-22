@@ -1,4 +1,4 @@
-package pl.edu.pjatk.lab_2;
+package pl.edu.pjatk.fitKing;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'pl.edu.pjatk.lab_2'
+    namespace 'pl.edu.pjatk.fitKing'
     compileSdk 34
 
     defaultConfig {
-        applicationId "pl.edu.pjatk.lab_2"
+        applicationId "pl.edu.pjatk.fitKing"
         minSdk 24
         targetSdk 34
         versionCode 1
