@@ -20,5 +20,3 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "PAMO_s23046"
-include ':lab_1'
-include ':lab_2'
