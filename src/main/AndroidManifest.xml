@@ -18,6 +18,9 @@
             android:name=".CaloriesToEat"
             android:exported="false" />
         <activity
+            android:name=".ShoppingListActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

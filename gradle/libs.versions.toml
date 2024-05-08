@@ -11,6 +11,7 @@ constraintlayout = "2.1.4"
 lifecycleLivedataKtx = "2.7.0"
 lifecycleViewmodelKtx = "2.7.0"
 runner = "1.5.2"
+jetbrainsKotlinJvm = "1.9.0"
 
 [libraries]
 commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commonsLang3" }
@@ -27,4 +28,5 @@ runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 

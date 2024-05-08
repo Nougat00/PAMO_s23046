@@ -1,0 +1,15 @@
+package pl.edu.pjatk.fitKing
+
+import android.content.Context
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+
+object Utils {
+    fun hideKeyboard(context: Context, view: View?) {
+        val inputMethodManager =
+            context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        if (view != null) {
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+    }
+}

@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
+    alias(libs.plugins.jetbrainsKotlinJvm) apply false
+    id 'org.jetbrains.kotlin.android' version '2.0.0-RC2' apply true
 }
 
 android {
@@ -23,8 +25,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
     }
 }
 
@@ -35,6 +40,9 @@ dependencies {
     implementation libs.activity
     implementation libs.constraintlayout
     implementation libs.commons.lang3
+    implementation 'androidx.core:core-ktx:+'
+    implementation 'androidx.core:core-ktx:+'
+    runtimeOnly 'androidx.recyclerview:recyclerview:1.2.1'
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
