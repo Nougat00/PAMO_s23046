@@ -7,31 +7,33 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ShoppingListAdapter(private val shoppingList: MutableList<ShoppingItems>) :
-    RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
+class ShoppingListAdapter(private var items: List<Item>) : RecyclerView.Adapter<ItemViewHolder>() {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val itemName: TextView = itemView.findViewById(R.id.item_name)
-        val itemCheckbox: CheckBox = itemView.findViewById(R.id.item_checkbox)
-    }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.shopping_list_items, parent, false)
-        return ViewHolder(view)
+                .inflate(R.layout.shopping_list_item, parent, false)
+        return ItemViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = shoppingList[position]
-        holder.itemName.text = item.name
-        holder.itemCheckbox.isChecked = item.isPurchased
-
-        holder.itemCheckbox.setOnCheckedChangeListener { _, isChecked ->
-            item.isPurchased = isChecked
-        }
+    override fun onBindViewHolder(holder: ItemViewHolder, i: Int) {
+        val item = items[i]
+        holder.bind(item.title)
     }
 
     override fun getItemCount(): Int {
-        return shoppingList.size
+        return items.size
     }
 }
+
+class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    private val itemText: TextView = itemView.findViewById(R.id.ItemText)
+    private val itemCheckbox: CheckBox = itemView.findViewById(R.id.ItemCheckbox)
+
+    fun bind(item: String) {
+        itemText.text = item
+        itemCheckbox.isChecked = false
+    }
+}
+
+data class Item(val title: String)

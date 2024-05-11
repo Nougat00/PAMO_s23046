@@ -26,4 +26,8 @@ class MainActivity : AppCompatActivity() {
     fun openShoppingList(view: View?) {
         startActivity(Intent(this, ShoppingListActivity::class.java))
     }
+
+    fun openBmiProgress(view: View?) {
+        startActivity(Intent(this, BMIProgressActivity::class.java))
+    }
 }

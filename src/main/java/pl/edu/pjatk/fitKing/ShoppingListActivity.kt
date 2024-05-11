@@ -2,27 +2,39 @@ package pl.edu.pjatk.fitKing
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import org.apache.commons.lang3.StringUtils
+import pl.edu.pjatk.fitKing.R.id.itemList
 
 class ShoppingListActivity : AppCompatActivity() {
-    private lateinit var shoppingAdapter: ShoppingListAdapter
-    private lateinit var recyclerView: RecyclerView // Inicjalizacja recyclerView
+
+    private var items: ArrayList<Item> = ArrayList<Item>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val shoppingList = mutableListOf(
-            ShoppingItems("Mleko"),
-            ShoppingItems("Chleb"),
-            ShoppingItems("Jajka"),
-        )
-        setContentView(R.layout.shopping_list_items) // Ustawienie layoutu
-        shoppingAdapter = ShoppingListAdapter(shoppingList)
-        recyclerView.adapter = shoppingAdapter
+        setContentView(R.layout.shopping_list_activity)
+        findViewById<TextView>(R.id.recipeName).setText(getString(R.string.ShoppingListItemsRecipe1Name))
 
-        recyclerView = findViewById(R.id.recycler)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        for (itemName in StringUtils.split(getString(R.string.ShoppingListItemsRecipe1), ", ")){
+            items.add(Item(itemName))
+        }
+
+        val itemList = findViewById<RecyclerView>(itemList)
+        val recipeAdapter = ShoppingListAdapter(items)
+        itemList.layoutManager = LinearLayoutManager(this)
+        itemList.adapter = recipeAdapter
+        openMainActivity()
     }
+
+    private fun openMainActivity() {
+        val backButton = findViewById<ImageButton>(R.id.imageButton)
+        backButton.setOnClickListener {
+            startActivity(Intent(this@ShoppingListActivity, MainActivity::class.java))
+        }
+    }
+
 }

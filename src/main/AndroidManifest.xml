@@ -19,7 +19,10 @@
             android:exported="false" />
         <activity
             android:name=".ShoppingListActivity"
-            android:exported="true" />
+            android:exported="false" />
+        <activity
+            android:name=".BMIProgressActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

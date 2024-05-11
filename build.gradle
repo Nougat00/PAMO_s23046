@@ -41,7 +41,7 @@ dependencies {
     implementation libs.constraintlayout
     implementation libs.commons.lang3
     implementation 'androidx.core:core-ktx:+'
-    implementation 'androidx.core:core-ktx:+'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     runtimeOnly 'androidx.recyclerview:recyclerview:1.2.1'
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
